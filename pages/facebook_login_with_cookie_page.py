@@ -3,13 +3,6 @@ from pages.locators import FacebookLoginWithCookiePageLocators
 
 
 class FacebookLoginPage(BasePage):
-    def is_facebook_cookie(self):
-        cookies = self.browser.get_cookies()
-        if 'c_user' in cookies:
-            return True
-        else:
-            return False
-
     def should_be_login_as_button(self):
         assert self.browser.find_element(
             *FacebookLoginWithCookiePageLocators.CONTINUE_AS_BUTTON) is True, 'Login as button does not exist'
